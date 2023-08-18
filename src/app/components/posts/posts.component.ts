@@ -5,11 +5,12 @@ import {Post} from "../../interface/posts";
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
-  styleUrls: ['./posts.component.scss'],
+  styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent implements OnInit{
 
   constructor(private appService: AppService) {}
+  color = '#3f51b57d';
   posts:Post[] = []
   loading = true
   ngOnInit() {

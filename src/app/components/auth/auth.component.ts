@@ -44,25 +44,26 @@ export class AuthComponent implements OnInit {
   errorAuth = false
   confirm = false
 
-  toggleNotification(notificationType: 'errorReg' | 'error' | 'confirm') {
-    this[notificationType] = true;
-    setTimeout(() => {
-      this[notificationType] = false;
-    }, 5000);
-  }
 
+  toggleError(){
+    this.error = false
+    this.errorReg = false
+    this.errorAuth = false
+    this.confirm = false
+  }
   onSubmit() {
     if (this.auth.valid) {
       console.log('valid')
       if (localStorage.getItem(this.auth.value.login)) {
-        this.toggleNotification("errorReg")
+        this.errorReg = true
       } else {
         localStorage.setItem(this.auth.value.login, this.auth.value.password)
+
         this.auth.reset()
-        this.toggleNotification('confirm')
+        this.confirm = true
       }
     } else {
-      this.toggleNotification('error')
+      this.error = true
     }
   }
 

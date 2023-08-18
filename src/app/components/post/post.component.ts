@@ -4,11 +4,11 @@ import {AppService} from "../../app.service";
 import {Post} from "../../interface/posts";
 
 @Component({
-  selector: 'app-details',
-  templateUrl: './details.component.html',
-  styleUrls: ['./details.component.scss']
+  selector: 'app-post',
+  templateUrl: './post.component.html',
+  styleUrls: ['./post.component.scss']
 })
-export class DetailsComponent implements OnInit{
+export class PostComponent implements OnInit{
   constructor(private route: ActivatedRoute, private appService: AppService) {
   }
   post:Post = {} as Post

@@ -11,17 +11,22 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-
 }
 
-.post {
-  padding: 5px;
-  border: 1px solid black;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
+//.post {
+//  cursor: pointer;
+
+//}
+.ripple-container {
   cursor: pointer;
-  box-shadow: 1px 1px 5px 1px black;
+  width: 100%;
+  height: 100%;
+  line-height: 1;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-tap-highlight-color: #3f51b5;
   transition: all .3s;
 
   &:hover {
@@ -29,13 +34,7 @@
   }
 }
 
-.title {
-  display: inline-block;
-  margin-left: 10px;
 
-  &::first-letter {
-    text-transform: uppercase;
-  }
-}
+
 
 

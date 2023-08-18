@@ -1,4 +1,4 @@
-.contentBox {
+.contentBox{
   width: 70%;
   margin: 0 auto;
   display: flex;
@@ -8,49 +8,44 @@
   font-size: 20px;
 }
 
-.post {
+.post{
   padding: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-
-.id {
+.id{
   font-size: 25px;
   color: darkred;
 }
-
-.title {
+.title{
   margin-left: 5px;
   font-size: 35px;
   color: blueviolet;
   display: inline-block;
+  &::first-letter{
+    text-transform: uppercase;
+  }
 }
-.title::first-letter {
-  text-transform: uppercase;
-}
-
-.body {
+.body{
   margin-top: 15px;
   font-size: 30px;
   color: green;
   display: inline-block;
-}
-.body::first-letter {
-  text-transform: uppercase;
-}
-
-button {
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  color: #223eb2;
-  background-color: #a6ec68;
-  padding: 5px 10px;
-}
-button:hover {
-  opacity: 0.5;
+  &::first-letter{
+    text-transform: uppercase;
+  }
 }
 
-/*# sourceMappingURL=details.component.css.map */
+//button{
+//  border: none;
+//  border-radius: 5px;
+//  cursor: pointer;
+//  color: #223eb2;
+//  background-color: #a6ec68;
+//  padding: 5px 10px;
+//  &:hover{
+//    opacity: .5;
+//  }
+//}

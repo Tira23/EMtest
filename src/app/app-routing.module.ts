@@ -1,7 +1,7 @@
 import {inject, NgModule} from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {PostsComponent} from "./components/posts/posts.component";
-import {DetailsComponent} from "./components/details/details.component";
+import {PostComponent} from "./components/post/post.component";
 import {AuthComponent} from "./components/auth/auth.component";
 import {NotFoundComponent} from "./components/not-found/not-found.component";
 import {AuthGuard} from "./guards/auth.guard";
@@ -21,8 +21,8 @@ const routes: Routes = [
 
   },
   {
-    path: 'details/:id',
-    component: DetailsComponent,
+    path: 'post/:id',
+    component: PostComponent,
     title: 'Details page',
     canActivate: [()=> inject(AuthGuard).canActivate()],
 

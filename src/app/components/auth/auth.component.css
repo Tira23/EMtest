@@ -11,24 +11,9 @@ section {
   justify-content: center;
   gap: 20px;
 }
-.authForm input, .authForm button {
+
+.full-width {
   width: 100%;
-  height: 40px;
-  border-radius: 5px;
-}
-.authForm button {
-  cursor: pointer;
-  width: 102%;
-  color: #4400ff;
-}
-.authForm button:hover {
-  color: white;
-}
-.authForm button[type=submit] {
-  background-color: #3ac03a;
-}
-.authForm button[type=button] {
-  background-color: #3ac0b7;
 }
 
 @media screen and (max-width: 575px) {

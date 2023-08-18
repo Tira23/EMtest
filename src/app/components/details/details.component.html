@@ -1,9 +1,0 @@
-<section class="contentBox">
-  <p *ngIf="loading">Loading...</p>
-  <p *ngIf="!loading" class="id">Details {{post.id}}</p>
-  <div class="post">
-    <span class="title">{{post.title}}</span>
-    <span class="body">{{post.body}}</span>
-  </div>
-  <button [routerLink]="['/posts']">Back</button>
-</section>
