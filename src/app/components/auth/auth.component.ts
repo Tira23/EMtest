@@ -23,8 +23,16 @@ export class AuthComponent implements OnInit {
 
   ngOnInit() {
     this.auth = new FormGroup({
-      login: new FormControl('', [Validators.required, Validators.minLength(7), Validators.maxLength(16)]),
-      password: new FormControl('', [Validators.required, Validators.minLength(7), Validators.maxLength(16)])
+      login: new FormControl('', [
+        Validators.required,
+        Validators.minLength(7),
+        Validators.maxLength(16)
+      ]),
+      password: new FormControl('', [
+        Validators.required,
+        Validators.minLength(4),
+        Validators.maxLength(16)
+      ])
     })
     if (this.authService.isLoggedIn()) {
       this.router.navigate(['posts']).then()
@@ -45,6 +53,7 @@ export class AuthComponent implements OnInit {
 
   onSubmit() {
     if (this.auth.valid) {
+      console.log('valid')
       if (localStorage.getItem(this.auth.value.login)) {
         this.toggleNotification("errorReg")
       } else {

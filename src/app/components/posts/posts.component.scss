@@ -1,5 +1,4 @@
-.contentBox{
-  width: 70%;
+.contentBox {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -7,29 +6,36 @@
   gap: 50px;
   font-size: 20px;
 }
-.posts{
+
+.posts {
   display: flex;
   flex-direction: column;
   gap: 15px;
 
 }
-.post{
+
+.post {
   padding: 5px;
   border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
   cursor: pointer;
+  box-shadow: 1px 1px 5px 1px black;
   transition: all .3s;
-  &:hover{
 
-  transform: scale(1.05) ;
-
+  &:hover {
+    transform: scale(1.05);
   }
 }
 
-.title{
+.title {
   display: inline-block;
   margin-left: 10px;
-  &::first-letter{
+
+  &::first-letter {
     text-transform: uppercase;
   }
 }
+
 

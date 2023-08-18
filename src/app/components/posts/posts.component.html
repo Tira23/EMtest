@@ -1,5 +1,5 @@
 <section class="contentBox">
-  <div>Posts</div>
+  <div>Posts:</div>
   <p *ngIf="loading">Loading...</p>
   <div class="posts">
     <div *ngFor="let post of posts" class="post" [routerLink]="['/details', post.id]">

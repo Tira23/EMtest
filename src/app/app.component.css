@@ -7,10 +7,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.spacer {
-  flex: 1;
-}
-
 .toolbar {
   position: absolute;
   top: 0;
@@ -19,6 +15,7 @@
   height: 60px;
   display: flex;
   align-items: center;
+  justify-content: space-around;
   background-color: #1976d2;
   color: white;
   font-weight: 600;
@@ -28,19 +25,24 @@
   margin: 0 16px;
 }
 
-.toolbar #twitter-logo {
+.toolbar #telegram {
   height: 40px;
   margin: 0 8px;
 }
 
-.toolbar #youtube-logo {
-  height: 40px;
-  margin: 0 16px;
+.toolbar #telegram:hover {
+  opacity: 0.8;
 }
 
-.toolbar #twitter-logo:hover,
-.toolbar #youtube-logo:hover {
-  opacity: 0.8;
+.logout {
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #ac3737;
+  padding: 5px 10px;
+}
+.logout:hover {
+  opacity: 0.5;
+  color: white;
 }
 
 .content {
@@ -50,11 +52,6 @@
   max-width: 960px;
   flex-direction: column;
   align-items: center;
-}
-
-nav {
-  display: flex;
-  gap: 25px;
 }
 
 svg#clouds {

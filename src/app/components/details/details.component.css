@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 50px;
+  gap: 10px;
   font-size: 20px;
 }
 
@@ -13,7 +13,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
+  justify-content: center;
 }
 
 .id {
@@ -22,7 +22,7 @@
 }
 
 .title {
-  margin-left: 10px;
+  margin-left: 5px;
   font-size: 35px;
   color: blueviolet;
   display: inline-block;
@@ -32,13 +32,25 @@
 }
 
 .body {
-  width: 50%;
+  margin-top: 15px;
   font-size: 30px;
   color: green;
   display: inline-block;
 }
 .body::first-letter {
   text-transform: uppercase;
+}
+
+button {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #223eb2;
+  background-color: #a6ec68;
+  padding: 5px 10px;
+}
+button:hover {
+  opacity: 0.5;
 }
 
 /*# sourceMappingURL=details.component.css.map */
