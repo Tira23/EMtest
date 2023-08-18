@@ -1,7 +1,7 @@
 <section>
   <form action="" class="authForm" [formGroup]="auth" (ngSubmit)="onSubmit()">
     <input type="text" class="loginInput" placeholder="Логин" formControlName="login"/>
-    <input type="text" class="passInput" placeholder="Пароль" formControlName="password"/>
+    <input type="password" class="passInput" placeholder="Пароль" formControlName="password"/>
     <button class="button" type="submit" id="regButton">Зарегистрироваться</button>
     <button class="button" type="button" id="authButton" (click)="onAuth()">Авторизоваться</button>
   </form>
