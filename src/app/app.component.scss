@@ -54,23 +54,10 @@
   align-items: center;
 }
 
-//nav{
-//  display: flex;
-//  gap: 25px;
-//}
-
 svg#clouds {
   position: fixed;
   bottom: -160px;
   left: -230px;
   z-index: -10;
   width: 1920px;
-}
-
-@media screen and (max-width: 767px) {
-
-}
-
-@media screen and (max-width: 575px) {
-
 }
