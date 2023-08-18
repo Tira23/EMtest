@@ -43,8 +43,6 @@
   opacity: 0.8;
 }
 
-
-
 .content {
   display: flex;
   margin: 82px auto 32px;
@@ -54,7 +52,7 @@
   align-items: center;
 }
 
-nav{
+nav {
   display: flex;
   gap: 25px;
 }
@@ -67,10 +65,4 @@ svg#clouds {
   width: 1920px;
 }
 
-@media screen and (max-width: 767px) {
-
-}
-
-@media screen and (max-width: 575px) {
-
-}
+/*# sourceMappingURL=app.component.css.map */

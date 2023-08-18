@@ -1,0 +1,10 @@
+<section class="contentBox">
+  <div>Posts</div>
+  <p *ngIf="loading">Loading...</p>
+  <div class="posts">
+    <div *ngFor="let post of posts" class="post" [routerLink]="['/details', post.id]">
+      <span class="id">{{post.id}}.</span>
+      <span class="title">{{post.title}}</span>
+    </div>
+  </div>
+</section>

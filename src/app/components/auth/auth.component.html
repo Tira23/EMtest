@@ -1,0 +1,14 @@
+<p>auth works!</p>
+<form action="" class="authForm" [formGroup]="auth" (ngSubmit)="onSubmit()">
+  <input type="text" class="loginInput" placeholder="Логин" formControlName="login"/>
+  <input type="text" class="passInput"  placeholder="Пароль" formControlName="password"/>
+  <button class="button" type="submit" id="regButton">Зарегистрироваться</button>
+  <button class="button" type="button" id="authButton" (click)="onAuth()"  >Авторизоваться</button>
+</form>
+<p *ngIf="error" style="color: red">Введите корректные данные</p>
+<p *ngIf="error" style="color: red">Логин не может быть меньше 7 символов</p>
+<p *ngIf="error" style="color: red">Пароль не может быть меньше 4 символов</p>
+<p *ngIf="errorReg" style="color: red">Такой пользователь уже существует</p>
+<p *ngIf="errorAuth" style="color: red">Неверный пароль</p>
+<p *ngIf="confirm" style="color: green">Вы успешно зарегистрировались</p>
+<!--[disabled]="!auth.valid"-->
