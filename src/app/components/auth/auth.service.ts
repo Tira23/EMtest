@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Observable, of, throwError} from "rxjs";
+import {Observable, of,  throwError} from "rxjs";
 import {Router} from "@angular/router";
 
 @Injectable({
@@ -29,7 +29,6 @@ export class AuthService {
   }
   logOut(){
     localStorage.removeItem('token')
-    this.router.navigate([''])
-    return true
+    this.router.navigate(['']).then(()=> true )
   }
 }

@@ -8,7 +8,6 @@ import { PostComponent } from './components/post/post.component';
 import {HttpClientModule} from "@angular/common/http";
 import { AuthComponent } from './components/auth/auth.component';
 import {ReactiveFormsModule} from "@angular/forms";
-import { NotFoundComponent } from './components/not-found/not-found.component';
 import {AuthService} from "./components/auth/auth.service";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from "@angular/material/form-field";
@@ -18,7 +17,6 @@ import {MatIconModule} from "@angular/material/icon";
 import { MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatListModule} from "@angular/material/list";
 import {MatCardModule} from "@angular/material/card";
-import {MatProgressBarModule} from "@angular/material/progress-bar";
 import {MatRippleModule} from "@angular/material/core";
 
 @NgModule({
@@ -27,25 +25,22 @@ import {MatRippleModule} from "@angular/material/core";
     PostsComponent,
     PostComponent,
     AuthComponent,
-    NotFoundComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatIconModule,
-    MatProgressSpinnerModule,
-    MatListModule,
-    MatCardModule,
-    MatProgressBarModule,
-    MatRippleModule,
-
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
+        MatIconModule,
+        MatProgressSpinnerModule,
+        MatListModule,
+        MatCardModule,
+        MatRippleModule,
+    ],
   providers: [
     AuthService
   ],

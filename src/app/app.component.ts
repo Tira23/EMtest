@@ -11,14 +11,16 @@ export class AppComponent {
   constructor(private authService: AuthService) {
   }
 
-  isLoggedIn(){ return !localStorage.getItem('token')}
 
-logOut()
-{
-  if (confirm('Разлогиниться и вернуться на главную?')) {
-    this.authService.logOut()
+
+  isLoggedIn() {
+    return this.authService.isLoggedIn()
   }
-}
 
-title = 'EMtest';
+  logOut() {
+      this.authService.logOut()
+
+  }
+
+  title = 'EM-test';
 }
