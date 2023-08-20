@@ -1,0 +1,13 @@
+<div mat-dialog-content>
+  <span class="red">Неправильные данные: </span>
+    <ul>
+      <li>
+        <span *ngIf="data.login; else falseLogin" class="green">&#10003; Логин</span>
+        <ng-template #falseLogin><span class="red">&#10060; Логин должен быть от 7 до 16 символов</span></ng-template>
+      </li>
+      <li>
+        <span class="green" *ngIf="data.password; else falsePass">&#10003; Пароль</span>
+        <ng-template #falsePass><span class="red">&#10060; Пароль должен быть от 4 до 16 символов</span></ng-template>
+      </li>
+    </ul>
+</div>

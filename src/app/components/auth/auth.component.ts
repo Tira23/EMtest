@@ -3,6 +3,9 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 
 import {Router} from "@angular/router";
 import {AuthService} from "./auth.service";
+import {MatDialog} from "@angular/material/dialog";
+import {ErrorDialogComponent} from "../dialogPopup/errors/error-dialog/error-dialog.component";
+import {DialogErrorData} from "../../interface/dialog";
 
 @Component({
   selector: 'app-auth',
@@ -15,8 +18,24 @@ export class AuthComponent implements OnInit {
     private formGroup: FormBuilder,
     private AuthService: AuthService,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    public dialog: MatDialog
   ) {
+  }
+
+  confirm = false
+
+
+  openDialog() {
+    console.log()
+    this.dialog.open<ErrorDialogComponent, DialogErrorData>(ErrorDialogComponent,
+      {
+        data: {
+          login: this.auth.controls['login'].valid,
+          password: this.auth.controls['password'].valid
+        }
+      }
+    );
   }
 
   auth!: FormGroup
@@ -39,38 +58,29 @@ export class AuthComponent implements OnInit {
     }
   }
 
-  error = false
-  errorReg = false
-  errorAuth = false
-  confirm = false
 
-
-  toggleError(){
-    this.error = false
-    this.errorReg = false
-    this.errorAuth = false
-    this.confirm = false
-  }
-  onSubmit() {
+  register() {
     if (this.auth.valid) {
-      console.log('valid')
       if (localStorage.getItem(this.auth.value.login)) {
-        this.errorReg = true
+        // this.openDialog()
       } else {
         localStorage.setItem(this.auth.value.login, this.auth.value.password)
-
         this.auth.reset()
         this.confirm = true
       }
     } else {
-      this.error = true
+      this.openDialog()
     }
   }
 
+
   onAuth() {
+    if (!this.auth.valid) {
+      return
+    }
     this.AuthService.login(this.auth.value).subscribe({
       next: () => this.router.navigate(['posts']),
-      error: (err) => alert(err.message)
+      // error: () => this.openDialog()
     })
   }
 }

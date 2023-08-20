@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import {Observable, of,  throwError} from "rxjs";
+import {Injectable} from '@angular/core';
+import {Observable, of, throwError} from "rxjs";
 import {Router} from "@angular/router";
 
 @Injectable({
@@ -8,6 +8,7 @@ import {Router} from "@angular/router";
 export class AuthService {
   constructor(private router: Router) {
   }
+
   setToken(token: string) {
     return localStorage.setItem('token', token)
   }
@@ -20,15 +21,16 @@ export class AuthService {
     return this.getToken() !== null
   }
 
-  login(userInfo: {login:string, password: string}): Observable<string | boolean>{
-    if(userInfo.password === localStorage.getItem(userInfo.login)){
+  login(userInfo: { login: string, password: string }): Observable<string | boolean> {
+    if (userInfo.password === localStorage.getItem(userInfo.login)) {
       this.setToken('auth done')
       return of(true)
     }
-    return throwError(()=> new Error('Ошибка авторизации'))
+    return throwError(() => true)
   }
-  logOut(){
+
+  logOut() {
     localStorage.removeItem('token')
-    this.router.navigate(['']).then(()=> true )
+    this.router.navigate(['']).then(() => true)
   }
 }

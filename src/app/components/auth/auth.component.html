@@ -1,24 +1,17 @@
 <section>
-
-  <form class="authForm" [formGroup]="auth" (ngSubmit)="onSubmit()">
+  <form class="authForm" [formGroup]="auth" (ngSubmit)="onAuth()">
     <mat-form-field class="full-width">
       <mat-label>Логин</mat-label>
-      <input (focus)="toggleError()" formControlName="login" matInput>
+      <input (focus)="confirm = false" type="text" formControlName="login" matInput>
     </mat-form-field>
     <mat-form-field class="full-width">
       <mat-label>Пароль</mat-label>
-      <input (focus)="toggleError()" formControlName="password" matInput>
+      <input (focus)="confirm = false" type="password" formControlName="password" matInput>
     </mat-form-field>
-
-    <button class="full-width" mat-stroked-button color="accent" type="submit">Зарегистрироваться</button>
-    <button class="full-width" mat-raised-button color="primary" type="button" (click)="onAuth()">Авторизоваться
+    <button class="full-width" mat-stroked-button color="accent" type="button" (click)="register()">Зарегистрироваться
+    </button>
+    <button class="full-width" mat-raised-button color="primary" type="submit">Авторизоваться
     </button>
   </form>
-
-  <p *ngIf="error" style="color: red">Введите корректные данные:</p>
-  <p *ngIf="error" style="color: red">- Логин не может быть меньше 7 символов</p>
-  <p *ngIf="error" style="color: red">- Пароль не может быть меньше 4 символов</p>
-  <p *ngIf="errorReg" style="color: red">Такой пользователь уже существует</p>
-  <p *ngIf="errorAuth" style="color: red">Неверный пароль</p>
-  <p *ngIf="confirm" style="color: green">Вы успешно зарегистрировались</p>
+  <p *ngIf="confirm" style="color: green; margin-top: 10px;">Вы успешно зарегистрировались</p>
 </section>
