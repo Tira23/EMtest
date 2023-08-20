@@ -25,29 +25,8 @@ export class AuthComponent implements OnInit {
   ) {
   }
 
-  confirm = false
-
-
-  dialogUserAlreadyError() {
-    this.dialog.open<UserAlreadyErrComponent>(UserAlreadyErrComponent);
-  }
-
-  dialogLoginError() {
-    this.dialog.open<LoginErrComponent>(LoginErrComponent);
-  }
-
-  dialogRegisterError() {
-    this.dialog.open<RegisterErrComponent, DialogErrorData>(RegisterErrComponent,
-      {
-        data: {
-          login: this.auth.controls['login'].valid,
-          password: this.auth.controls['password'].valid
-        }
-      }
-    );
-  }
-
   auth!: FormGroup
+  confirm = false
 
   ngOnInit() {
     this.auth = new FormGroup({
@@ -67,6 +46,24 @@ export class AuthComponent implements OnInit {
     }
   }
 
+  dialogUserAlreadyError() {
+    this.dialog.open<UserAlreadyErrComponent>(UserAlreadyErrComponent);
+  }
+
+  dialogLoginError() {
+    this.dialog.open<LoginErrComponent>(LoginErrComponent);
+  }
+
+  dialogRegisterError() {
+    this.dialog.open<RegisterErrComponent, DialogErrorData>(RegisterErrComponent,
+      {
+        data: {
+          login: this.auth.controls['login'].valid,
+          password: this.auth.controls['password'].valid
+        }
+      }
+    );
+  }
 
   register() {
     if (this.auth.valid) {

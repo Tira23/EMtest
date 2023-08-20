@@ -3,7 +3,6 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Post} from "./interface/posts";
 
-
 @Injectable({
   providedIn: 'root'
 })

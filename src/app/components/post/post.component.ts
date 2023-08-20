@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {Component, HostListener, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
 import {AppService} from "../../app.service";
 import {Post} from "../../interface/posts";
 
@@ -9,7 +9,7 @@ import {Post} from "../../interface/posts";
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent implements OnInit{
-  constructor(private route: ActivatedRoute, private appService: AppService) {
+  constructor(private route: ActivatedRoute, private appService: AppService, private router:Router) {
   }
   post:Post = {} as Post
   loading = true
@@ -22,5 +22,9 @@ export class PostComponent implements OnInit{
         this.loading = false
       })
     });
+  }
+  @HostListener('window:keydown.escape')
+  exit(){
+    this.router.navigate([`post`]).then()
   }
 }
