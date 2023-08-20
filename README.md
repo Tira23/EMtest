@@ -1,3 +1,9 @@
+https://em-test.vercel.app/ - деплой сайта
+
+
+https://em-test-site.vercel.app/posts - деплой dist
+
+
 # EMtest
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.5.
