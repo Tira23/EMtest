@@ -20,7 +20,9 @@ import {MatCardModule} from "@angular/material/card";
 import {MatRippleModule} from "@angular/material/core";
 import {LogOutDialogComponent} from './components/dialogPopup/log-out-dialog/log-out-dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
-import { ErrorDialogComponent } from './components/dialogPopup/errors/error-dialog/error-dialog.component';
+import { RegisterErrComponent } from './components/dialogPopup/errors/register-err/register-err.component';
+import { UserAlreadyErrComponent } from './components/dialogPopup/errors/userAlready-err/userAlready-err.component';
+import { LoginErrComponent } from './components/dialogPopup/errors/login-err/login-err.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { ErrorDialogComponent } from './components/dialogPopup/errors/error-dial
     PostComponent,
     AuthComponent,
     LogOutDialogComponent,
-    ErrorDialogComponent,
+    RegisterErrComponent,
+    UserAlreadyErrComponent,
+    LoginErrComponent,
   ],
   imports: [
     BrowserModule,

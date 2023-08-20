@@ -4,8 +4,10 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {AuthService} from "./auth.service";
 import {MatDialog} from "@angular/material/dialog";
-import {ErrorDialogComponent} from "../dialogPopup/errors/error-dialog/error-dialog.component";
+import {RegisterErrComponent} from "../dialogPopup/errors/register-err/register-err.component";
 import {DialogErrorData} from "../../interface/dialog";
+import {UserAlreadyErrComponent} from "../dialogPopup/errors/userAlready-err/userAlready-err.component";
+import {LoginErrComponent} from "../dialogPopup/errors/login-err/login-err.component";
 
 @Component({
   selector: 'app-auth',
@@ -26,9 +28,16 @@ export class AuthComponent implements OnInit {
   confirm = false
 
 
-  openDialog() {
-    console.log()
-    this.dialog.open<ErrorDialogComponent, DialogErrorData>(ErrorDialogComponent,
+  dialogUserAlreadyError() {
+    this.dialog.open<UserAlreadyErrComponent>(UserAlreadyErrComponent);
+  }
+
+  dialogLoginError() {
+    this.dialog.open<LoginErrComponent>(LoginErrComponent);
+  }
+
+  dialogRegisterError() {
+    this.dialog.open<RegisterErrComponent, DialogErrorData>(RegisterErrComponent,
       {
         data: {
           login: this.auth.controls['login'].valid,
@@ -62,25 +71,26 @@ export class AuthComponent implements OnInit {
   register() {
     if (this.auth.valid) {
       if (localStorage.getItem(this.auth.value.login)) {
-        // this.openDialog()
+        this.dialogUserAlreadyError()
       } else {
         localStorage.setItem(this.auth.value.login, this.auth.value.password)
         this.auth.reset()
         this.confirm = true
       }
     } else {
-      this.openDialog()
+      this.dialogRegisterError()
     }
   }
 
 
   onAuth() {
     if (!this.auth.valid) {
+      this.dialogRegisterError()
       return
     }
     this.AuthService.login(this.auth.value).subscribe({
       next: () => this.router.navigate(['posts']),
-      // error: () => this.openDialog()
+      error: () => this.dialogLoginError()
     })
   }
 }
