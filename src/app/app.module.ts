@@ -23,6 +23,7 @@ import {MatDialogModule} from "@angular/material/dialog";
 import { RegisterErrComponent } from './components/dialogPopup/errors/register-err/register-err.component';
 import { UserAlreadyErrComponent } from './components/dialogPopup/errors/userAlready-err/userAlready-err.component';
 import { LoginErrComponent } from './components/dialogPopup/errors/login-err/login-err.component';
+import { TextTransformPipe } from './components/pipes/text-transform.pipe';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { LoginErrComponent } from './components/dialogPopup/errors/login-err/log
     RegisterErrComponent,
     UserAlreadyErrComponent,
     LoginErrComponent,
+    TextTransformPipe,
   ],
   imports: [
     BrowserModule,

@@ -24,17 +24,11 @@
   font-size: 35px;
   color: blueviolet;
   display: inline-block;
-  &::first-letter{
-    text-transform: uppercase;
-  }
 }
 .body{
   margin-top: 15px;
   font-size: 30px;
   color: green;
   display: inline-block;
-  &::first-letter{
-    text-transform: uppercase;
-  }
 }
 

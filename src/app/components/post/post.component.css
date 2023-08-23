@@ -27,18 +27,12 @@
   color: blueviolet;
   display: inline-block;
 }
-.title::first-letter {
-  text-transform: uppercase;
-}
 
 .body {
   margin-top: 15px;
   font-size: 30px;
   color: green;
   display: inline-block;
-}
-.body::first-letter {
-  text-transform: uppercase;
 }
 
 /*# sourceMappingURL=post.component.css.map */
