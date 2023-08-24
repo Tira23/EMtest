@@ -85,7 +85,7 @@ export class AuthComponent implements OnInit {
       this.dialogRegisterError()
       return
     }
-    this.AuthService.login(this.auth.value).subscribe({
+    this.AuthService.loginCheck(this.auth.value).subscribe({
       next: () => this.router.navigate(['posts']),
       error: () => this.dialogLoginError()
     })

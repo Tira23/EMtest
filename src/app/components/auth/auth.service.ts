@@ -22,7 +22,7 @@ export class AuthService {
     return this.getToken() !== null
   }
 
-  login(userInfo: { login: string, password: string }): Observable<string | boolean> {
+  loginCheck(userInfo: { login: string, password: string }): Observable<string | boolean> {
     if (userInfo.password === localStorage.getItem(userInfo.login)) {
       this.setToken('auth done')
       return of(true)
