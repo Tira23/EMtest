@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 import {Router} from "@angular/router";
 import {AuthService} from "./auth.service";
@@ -17,7 +17,6 @@ import {LoginErrComponent} from "../dialogPopup/errors/login-err/login-err.compo
 export class AuthComponent implements OnInit {
 
   constructor(
-    private formGroup: FormBuilder,
     private AuthService: AuthService,
     private router: Router,
     private authService: AuthService,
