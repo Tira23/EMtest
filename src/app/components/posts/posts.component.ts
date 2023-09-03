@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AppService} from "../../app.service";
 import {Post} from "../../interface/posts";
 import {Router} from "@angular/router";
-import {Subscriber, Subscription} from "rxjs";
+import {Subscription} from "rxjs";
 
 
 @Component({
