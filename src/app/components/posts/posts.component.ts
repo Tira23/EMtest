@@ -18,19 +18,19 @@ export class PostsComponent implements OnInit, OnDestroy{
   color = '#3f51b57d';
   posts:Post[] = []
   loading = true
-  sub!: Subscription
+  subscription$?: Subscription
 
   click(id:number){
     this.router.navigate([`post/${id}`]).then()
   }
   ngOnInit() {
-   this.sub = this.appService.getAll().subscribe(data => {
+   this.subscription$ = this.appService.getAll().subscribe(data => {
       this.posts = data
       this.loading = false
     })
   }
   ngOnDestroy(): void {
-    this.sub.unsubscribe()
+    this.subscription$?.unsubscribe()
 
   }
 

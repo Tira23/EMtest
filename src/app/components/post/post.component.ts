@@ -15,10 +15,10 @@ export class PostComponent implements OnInit, OnDestroy{
   }
   post:Post = {} as Post
   loading = true
-  sub!: Subscription
+  subscription$?: Subscription
   ngOnInit() {
 
-    this.sub = this.route.params.subscribe(params => {
+    this.subscription$ = this.route.params.subscribe(params => {
       const id = params['id'];
       this.appService.getDetails(id).subscribe(data => {
         this.post = data
@@ -32,6 +32,6 @@ export class PostComponent implements OnInit, OnDestroy{
   }
 
   ngOnDestroy(): void {
-    this.sub.unsubscribe()
+    this.subscription$?.unsubscribe()
   }
 }
